@@ -1,5 +1,5 @@
+import clase
 from tkinter import *
-
 from tkinter.ttk import *
 
 
@@ -8,20 +8,16 @@ from tkinter.ttk import *
 import multiprocessing
 import sys
 
-from lee import *
 
 c_total = 200
 
 
-def arduino_stuff():
-    init()
-    zeroLevel = calibration()
-    mide()
+
 
 def UI_stuff():
     def start():
 
-        GB = 100
+        c_total = 100
 
         download = 0
 
@@ -81,6 +77,3 @@ def UI_stuff():
 
 
     window.mainloop()
-
-
-    
