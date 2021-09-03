@@ -29,7 +29,8 @@ class Placa:
         print("Zero level = ", self.zeroLevel)   
 
     def mide(self, verbose=False):
-        os.remove("counts.txt") 
+        if os.path.exists("length.txt"):
+            os.remove("length.txt")
         t0 = time.time()
         while self.switch==True:
             rawValue = self.board.analog[self.AnalogPin].read() - self.zeroLevel
@@ -45,7 +46,7 @@ class Placa:
                 
             
     def escribe(self):
-        with open("counts.txt", "a") as file_object:
+        with open("length.txt", "a") as file_object:
             # Append 'hello' at the end of file
             file_object.write("\n" + str(self.length))
 
