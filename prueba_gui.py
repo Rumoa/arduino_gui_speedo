@@ -139,5 +139,5 @@ button.pack(side = BOTTOM)
 # button.pack(fill=BOTH, expand=1, side = TOP)#, side = TOP)
 
 
-
+window.wm_attributes('-fullscreen', 'True')
 window.mainloop()
