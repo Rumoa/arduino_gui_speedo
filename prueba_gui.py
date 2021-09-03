@@ -29,23 +29,28 @@ def start():
     percentLabel.pack(side = BOTTOM, pady=15)
     taskLabel.pack(side = BOTTOM,  pady=10)
     
-    GB = 100
+    total_length = 0.4
 
     download = 0
 
-    speed = 0.1
+    speed = 0.4
 
-    while(download<GB):
+    while(download<total_length):
         window.update()
         time.sleep(0.05)
 
-        bar['value']+=(speed/GB)*100
+        with open('length.txt', 'r') as f:
+            lines = f.read().splitlines()
+            current_length = float(lines[-1])/1000
+            
 
-        download+=speed
+        bar['value']=round((current_length/total_length)*100, 2)
+
+        #download+=speed
         
-        percent.set(str(int((download/GB)*100))+"%")
+        percent.set(str(int((current_length/total_length)*100))+"%")
 
-        text.set(str(download)+"/"+str(GB)+" KM COMPLETADOS")
+        text.set(str(round(current_length,2))+"/"+str(total_length)+" KM COMPLETADOS")
 
         window.update_idletasks()
 
