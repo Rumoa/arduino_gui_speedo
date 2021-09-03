@@ -1,5 +1,7 @@
 from pyfirmata import Arduino, util
 import time
+import os
+
 
 class Placa:
     def __init__(self):
@@ -27,6 +29,7 @@ class Placa:
         print("Zero level = ", self.zeroLevel)   
 
     def mide(self, verbose=False):
+        os.remove("counts.txt") 
         t0 = time.time()
         while self.switch==True:
             rawValue = self.board.analog[self.AnalogPin].read() - self.zeroLevel
@@ -42,7 +45,7 @@ class Placa:
                 
             
     def escribe(self):
-        with open("sample.txt", "a") as file_object:
+        with open("counts.txt", "a") as file_object:
             # Append 'hello' at the end of file
             file_object.write("\n" + str(self.length))
 
@@ -56,4 +59,4 @@ if __name__=="__main__":
     uno = Placa()
     uno.init()
     uno.calibration()
-    uno.mide()    
+    uno.mide(verbose=True)    
