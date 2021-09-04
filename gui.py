@@ -104,7 +104,7 @@ bar.pack_forget()
 
 # s.configure("Red.TCheckbutton", background="black",
 # foreground='#0de03f',
-# font=('Courier New Bold', 24),
+# font=('Courier New', 24),
 # borderwidth=0)
 
 
@@ -112,7 +112,7 @@ bar.pack_forget()
 percentLabel = tk.Label(lf,textvariable=percent,
 bg = 'black',
 borderwidth=0,
-font = ("Courier New Bold", 24),
+font = ("Courier New", 24),
 fg='#0de03f')
 
 percentLabel.pack_forget()
@@ -121,7 +121,7 @@ percentLabel.pack_forget()
 taskLabel = tk.Label(lf,textvariable=text,
 bg = 'black',
 borderwidth=0,
-font = ("Courier New Bold", 24),
+font = ("Courier New", 24),
 fg='#0de03f')
 taskLabel.pack_forget()
 
@@ -131,7 +131,7 @@ taskLabel.pack_forget()
 button = tk.Button(lf,text="START",command=start, 
 bg = 'black',
 borderwidth=0,
-font = ("Courier New Bold", 40),
+font = ("Courier New", 40),
 fg='#0de03f')
 button.pack(side = BOTTOM)
 
